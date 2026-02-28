@@ -15,7 +15,7 @@ const noteSchema = new mongoose.Schema({
 );
 
 
-const Note = mongoose.Aggregate.model("Note", noteSchema)
+const Note = mongoose.model("Note", noteSchema)
 
 export default Note
 
