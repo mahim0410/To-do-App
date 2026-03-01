@@ -9,7 +9,6 @@ import 'daisyui/dist/full.css'
 const App = () => {
   return (
     <div data-theme="forest">
-      <button className="btn btn-primary">Primary</button>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
