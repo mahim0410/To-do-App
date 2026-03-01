@@ -5,8 +5,13 @@ import dotenv from "dotenv";
 import 'dotenv/config';
 dotenv.config();
 
-app.listen(5001, () => {
-    console.log('Server is running on port 5001');
-});
 
-connectDB();
+
+connectDB().then(() => {
+    console.log("Connected to MongoDB")
+    app.listen(5001, () => {
+        console.log('Server is running on port 5001');
+    });
+}).catch((error) => {
+    console.log("Error connecting to MongoDB", error)
+});
