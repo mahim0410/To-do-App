@@ -8,13 +8,14 @@ import 'daisyui/dist/full.css'
 
 const App = () => {
   return (
-    <div data-theme="forest">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/create" element={<CreatePage />} />
-        <Route path="/note/:id" element={<NoteDetailPage />} />
-      </Routes>
-
+    <div data-theme="forest" className="relative">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/create" element={<CreatePage />} />
+          <Route path="/note/:id" element={<NoteDetailPage />} />
+        </Routes>
+      </div>
     </div>
   )
 }
