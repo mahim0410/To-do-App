@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { NoteCard } from '../components/NoteCard'
-
+import api from '../lib/axios'
 
 const HomePage = () => {
 
@@ -13,7 +13,7 @@ const HomePage = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const res = await axios.get("http://localhost:5001/api/notes")
+                const res = await api.get("/notes")
                 setNotes(res.data)
                 console.log(res.data)
             } catch (error) {
@@ -34,7 +34,7 @@ const HomePage = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                         {notes.map((note) => {
                             return (
-                                <NoteCard key={note._id} note={note} />
+                                <NoteCard key={note._id} note={note} setNotes={setNotes} />
                             )
                         })}
 
